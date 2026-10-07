@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#061222" />
     <meta name="description" content="FWD/01 is a barber studio concept built around precision, texture, and the shape of you." />
-    <title>FWD/01 — Own every angle</title>
+    <title>FWD/01 — Form follows you</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="preload" as="image" href="/images/hero.webp" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="/images/hero-v2.webp" />
     <link rel="stylesheet" href="/styles.css" />
     <script type="module" src="/app.js"></script>
   </head>
@@ -24,22 +24,21 @@
         <a href="#services">Services</a>
         <a href="#finale">The chair</a>
       </nav>
-      <button class="header-cta" type="button" data-open-booking>Book the chair <span aria-hidden="true">↗</span></button>
-      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span></button>
+      <button class="header-cta" type="button" data-open-booking><span>Reserve a chair</span><span class="button-index" aria-hidden="true">01 /</span></button>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">Menu</button>
     </header>
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-media"><img src="/images/hero.webp" alt="A close profile showing the texture and precise taper of a fresh haircut" width="1672" height="941" fetchpriority="high" /></div>
+        <div class="hero-media"><img src="/images/hero-v2.webp" alt="A sculptural barber chair set before a luminous circular opening in a dark studio" width="1672" height="941" fetchpriority="high" /></div>
         <div class="hero-shade" aria-hidden="true"></div>
-        <div class="hero-beam" aria-hidden="true"></div>
-        <div class="hero-coordinates" aria-hidden="true">40° 47′ 13″ / FORM STUDY 001</div>
+        <div class="hero-frame" aria-hidden="true"><span>01 / THE ARRIVAL</span><span>FWD BARBER STUDIO</span></div>
         <div class="hero-content">
-          <p class="eyebrow hero-eyebrow"><span class="eyebrow-line"></span> Cut for the person, not the picture</p>
-          <h1 id="hero-title"><span class="title-clip"><span>OWN</span></span><span class="title-clip"><span>EVERY</span></span><span class="title-clip"><span>ANGLE<span class="title-period">.</span></span></span></h1>
-          <div class="hero-copy-row"><p>A good cut works with your hair, your head, and the life you take it into.</p><a class="round-link" href="#approach" aria-label="Explore our approach"><span aria-hidden="true">↘</span></a></div>
+          <p class="eyebrow hero-eyebrow">A studio for the shape of you</p>
+          <h1 id="hero-title"><span class="title-clip"><span>Form</span></span><span class="title-clip"><span><em>follows</em> you.</span></span></h1>
+          <div class="hero-copy-row"><p>Precision that belongs to you, long after you leave the chair.</p><a class="hero-discover" href="#approach">Explore the craft</a></div>
         </div>
-        <div class="hero-bottom"><span>FWD / THE NEXT VERSION OF YOU</span><span class="hero-bottom-rule"></span><span>SCROLL TO EXPLORE</span><span class="scroll-glyph" aria-hidden="true">↓</span></div>
+        <div class="hero-bottom"><span>AN EXERCISE IN SELF-EXPRESSION</span><span class="hero-bottom-rule"></span><span>SCROLL TO EXPLORE</span><span class="scroll-line" aria-hidden="true"></span></div>
       </section>
 
       <section class="interlude" aria-label="The FWD approach statement"><p>EVERY HEAD.<br /><span>ITS OWN GEOMETRY.</span></p><div class="interlude-rule" aria-hidden="true"></div><span class="interlude-aside">THE LINE STARTS WITH YOU.</span></section>
@@ -59,12 +58,12 @@
       <section class="services" id="services" aria-labelledby="services-title">
         <div class="services-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> The cut menu</p><h2 id="services-title">MAKE<br />YOUR<br />MARK<span>.</span></h2></div><p>Start with what you have in mind. We’ll work out the details in the chair.</p></div>
         <div class="service-list">
-          <button class="service" type="button" data-service="The Reset"><span class="service-num">01</span><span class="service-title">The Reset</span><span class="service-detail">A considered, all-over cut</span><span class="service-arrow" aria-hidden="true">↗</span></button>
-          <button class="service" type="button" data-service="The Fade"><span class="service-num">02</span><span class="service-title">The Fade</span><span class="service-detail">Close edges, your texture on top</span><span class="service-arrow" aria-hidden="true">↗</span></button>
-          <button class="service" type="button" data-service="The Shape-Up"><span class="service-num">03</span><span class="service-title">The Shape-Up</span><span class="service-detail">A sharper line, kept in place</span><span class="service-arrow" aria-hidden="true">↗</span></button>
-          <button class="service" type="button" data-service="The Full Set"><span class="service-num">04</span><span class="service-title">The Full Set</span><span class="service-detail">Hair and beard, together</span><span class="service-arrow" aria-hidden="true">↗</span></button>
+          <button class="service" type="button" data-service="The Reset"><span class="service-num">01</span><span class="service-title">The Reset</span><span class="service-detail">A considered, all-over cut</span><span class="service-action" aria-hidden="true">Select</span></button>
+          <button class="service" type="button" data-service="The Fade"><span class="service-num">02</span><span class="service-title">The Fade</span><span class="service-detail">Close edges, your texture on top</span><span class="service-action" aria-hidden="true">Select</span></button>
+          <button class="service" type="button" data-service="The Shape-Up"><span class="service-num">03</span><span class="service-title">The Shape-Up</span><span class="service-detail">A sharper line, kept in place</span><span class="service-action" aria-hidden="true">Select</span></button>
+          <button class="service" type="button" data-service="The Full Set"><span class="service-num">04</span><span class="service-title">The Full Set</span><span class="service-detail">Hair and beard, together</span><span class="service-action" aria-hidden="true">Select</span></button>
         </div>
-        <div class="services-end"><span>NOT SURE YET? START WITH A CONVERSATION.</span><button type="button" data-open-booking>Build your request <span aria-hidden="true">↗</span></button></div>
+        <div class="services-end"><span>NOT SURE YET? START WITH A CONVERSATION.</span><button type="button" data-open-booking>Build your request</button></div>
       </section>
 
       <section class="finale" id="finale" aria-labelledby="finale-title">
@@ -72,22 +71,22 @@
         <p class="eyebrow"><span class="eyebrow-line"></span> Your next move</p>
         <h2 id="finale-title"><span>TAKE THE</span><span>NEXT SEAT<span class="title-period">.</span></span></h2>
         <p>Know the cut you want? Tell us. Still figuring it out? That’s fine too.</p>
-        <button class="finale-cta" type="button" data-open-booking><span>Find your cut</span><span aria-hidden="true">↗</span></button>
+        <button class="finale-cta" type="button" data-open-booking><span>Find your cut</span><span class="button-index" aria-hidden="true">01 /</span></button>
         <span class="finale-watermark" aria-hidden="true">FWD/01</span>
       </section>
     </main>
 
-    <footer class="site-footer"><a class="brand" href="#top">FWD<span>/</span>01<small>BARBER STUDIO</small></a><p>Good form, your way.</p><a href="#top">Back to top ↑</a><span>© FWD/01</span></footer>
+    <footer class="site-footer"><a class="brand" href="#top">FWD<span>/</span>01<small>BARBER STUDIO</small></a><p>Good form, your way.</p><a href="#top">Back to top</a><span>© FWD/01</span></footer>
 
     <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
-      <div class="booking-head"><span>FWD/01 / YOUR CHAIR</span><button class="dialog-close" type="button" aria-label="Close booking panel">×</button></div>
+      <div class="booking-head"><span>FWD/01 / YOUR CHAIR</span><button class="dialog-close" type="button" aria-label="Close booking panel">Close</button></div>
       <div class="booking-body"><h2 id="booking-title">START<br />HERE<span>.</span></h2><p>Tell us what you have in mind. We’ll put your request together.</p>
         <form id="booking-form">
           <label for="booking-service">Choose a starting point</label>
           <select id="booking-service" name="service" required><option value="">Select a service</option><option>The Reset</option><option>The Fade</option><option>The Shape-Up</option><option>The Full Set</option></select>
           <label for="booking-note">Your note <span>(optional)</span></label>
           <textarea id="booking-note" name="note" rows="3" placeholder="Your usual cut, a new idea, or what you want to change"></textarea>
-          <button class="booking-submit" type="submit">Prepare my request <span aria-hidden="true">↗</span></button>
+          <button class="booking-submit" type="submit">Prepare my request <span class="button-index" aria-hidden="true">01 /</span></button>
         </form><p id="booking-status" class="booking-status" role="status" aria-live="polite"></p>
       </div>
     </dialog>

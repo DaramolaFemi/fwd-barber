@@ -38,12 +38,14 @@ function closeMenu() {
   header.classList.remove('menu-open');
   menuToggle.setAttribute('aria-expanded', 'false');
   menuToggle.setAttribute('aria-label', 'Open menu');
+  menuToggle.textContent = 'Menu';
 }
 
 menuToggle.addEventListener('click', () => {
   const isOpen = header.classList.toggle('menu-open');
   menuToggle.setAttribute('aria-expanded', String(isOpen));
   menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  menuToggle.textContent = isOpen ? 'Close' : 'Menu';
 });
 
 document.querySelectorAll('.primary-nav a').forEach((link) => {
@@ -130,7 +132,7 @@ if (!reducedMotion) {
       .to('.hero-media img', { scale: 1.2, xPercent: -2, ease: 'none' }, 0)
       .to('.hero-content', { y: -95, autoAlpha: 0, ease: 'none' }, .18)
       .to('.hero-bottom', { autoAlpha: 0, ease: 'none' }, .27)
-      .to('.hero-beam', { x: -190, opacity: 0, ease: 'none' }, 0);
+      .to('.hero-frame', { autoAlpha: 0, ease: 'none' }, .27);
   });
 
   gsap.from('.interlude p', {
