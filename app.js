@@ -135,10 +135,63 @@ if (!reducedMotion) {
       .to('.hero-frame', { autoAlpha: 0, ease: 'none' }, .27);
   });
 
-  gsap.from('.interlude p', {
-    y: 70, autoAlpha: 0, duration: 1.2, ease: 'power3.out',
-    scrollTrigger: { trigger: '.interlude', start: 'top 80%' },
+  mm.add('(min-width: 981px)', () => {
+    gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        trigger: '.interlude',
+        start: 'top top',
+        end: '+=180%',
+        scrub: 1.15,
+        pin: true,
+        anticipatePin: 1,
+      },
+    })
+      .fromTo('.interlude-media',
+        { rotationY: -26, rotationX: 7, x: 140, z: -180, scale: .84 },
+        { rotationY: 0, rotationX: 0, x: 0, z: 0, scale: 1, duration: 1 }, 0)
+      .fromTo('.interlude-content',
+        { x: -28, z: -65, rotationY: 5, autoAlpha: .55 },
+        { x: 0, z: 0, rotationY: 0, autoAlpha: 1, duration: .48 }, .07)
+      .to('.interlude-media',
+        { rotationY: 13, rotationX: -3, x: -65, z: 120, scale: 1.07, duration: .55 }, 1.03)
+      .to('.interlude-content',
+        { x: -20, z: 35, autoAlpha: 0, duration: .42 }, 1.14);
+
+    gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        trigger: '.finale',
+        start: 'top top',
+        end: '+=130%',
+        scrub: 1.1,
+        pin: true,
+        anticipatePin: 1,
+      },
+    })
+      .fromTo('.finale-media',
+        { rotationY: 24, rotationX: 5, x: -125, z: -190, scale: .85 },
+        { rotationY: 0, rotationX: 0, x: 0, z: 0, scale: 1, duration: 1 }, 0)
+      .fromTo('.finale-content',
+        { x: 75, z: 135, rotationY: -7, autoAlpha: 1 },
+        { x: 0, z: 70, rotationY: 0, autoAlpha: 1, duration: .5 }, .07)
+      .to('.finale-media',
+        { rotationY: -8, x: 26, z: 70, scale: 1.04, duration: .42 }, 1.01);
   });
+
+  mm.add('(max-width: 980px)', () => {
+    for (const section of ['interlude', 'finale']) {
+      gsap.fromTo(`.${section}-media img`, { scale: 1.11 }, {
+        scale: 1, ease: 'none',
+        scrollTrigger: { trigger: `.${section}`, start: 'top bottom', end: 'bottom top', scrub: 1 },
+      });
+      gsap.from(`.${section}-content > *`, {
+        y: 34, autoAlpha: 0, duration: .9, ease: 'power3.out', stagger: .1,
+        scrollTrigger: { trigger: `.${section}`, start: 'top 70%' },
+      });
+    }
+  });
+
   gsap.fromTo('.craft-media img', { scale: 1.16 }, {
     scale: 1, ease: 'none',
     scrollTrigger: { trigger: '.craft', start: 'top bottom', end: 'bottom top', scrub: 1.2 },
@@ -155,12 +208,5 @@ if (!reducedMotion) {
     y: 38, autoAlpha: 0, duration: .8, ease: 'power3.out', stagger: .09,
     scrollTrigger: { trigger: '.service-list', start: 'top 80%' },
   });
-  gsap.from('.finale h2 > span', {
-    yPercent: 45, autoAlpha: 0, duration: 1, ease: 'power3.out', stagger: .13,
-    scrollTrigger: { trigger: '.finale', start: 'top 70%' },
-  });
-  gsap.to('.finale-orbit', {
-    rotate: 65, ease: 'none',
-    scrollTrigger: { trigger: '.finale', start: 'top bottom', end: 'bottom top', scrub: 1 },
-  });
+  window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
 }
